@@ -23,8 +23,9 @@ services:
         target: /var/lib/clickhouse
         bind:
           create_host_path: true
-
-
+    ports:
+      - "8123:8123"
+      - "9000:9000"
 
 volumes:
   node_modules:

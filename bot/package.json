@@ -6,8 +6,11 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@clickhouse/client": "^1.10.1",
+    "@founderpath/kysely-clickhouse": "^1.6.1",
     "@types/node": "^22.10.10",
     "discord.js": "^14.17.3",
+    "kysely": "^0.27.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   },
@@ -19,6 +22,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "kysely-ctl": "^0.10.1",
     "prettier": "3.4.2"
   },
   "scripts": {

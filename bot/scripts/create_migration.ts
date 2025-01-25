@@ -12,7 +12,7 @@ export async function down(db: Kysely<any>): Promise<void> {
 }
 `;
 
-const lastMigrationFile: string = "migrations/last_migration";
+const lastMigrationFile: string = "last_migration";
 const lastMigrationStr = readFileSync(lastMigrationFile, "utf-8");
 const nextMigrationInt = Number.parseInt(lastMigrationStr) + 1;
 const nextMigrationStr = String(nextMigrationInt).padStart(4, "0");
