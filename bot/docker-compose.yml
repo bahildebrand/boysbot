@@ -15,6 +15,16 @@ services:
     command: yarn run dev
     environment:
       - DISCORD_TOKEN
+  clickhouse:
+    image: clickhouse:24.12
+    volumes:
+      - type: bind
+        source: ./ch_data
+        target: /var/lib/clickhouse
+        bind:
+          create_host_path: true
+
+
 
 volumes:
   node_modules:
