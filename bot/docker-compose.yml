@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: node:18
     volumes:
       - type: bind
         source: .
@@ -14,6 +12,8 @@ services:
         target: /app/node_modules
     environment:
       - DISCORD_TOKEN
+    working_dir: /app
+    command: yarn run dev
   clickhouse:
     image: clickhouse:24.12
     volumes:
