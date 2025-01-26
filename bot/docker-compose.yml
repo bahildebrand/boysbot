@@ -14,6 +14,8 @@ services:
       - DISCORD_TOKEN
     working_dir: /app
     command: yarn run dev
+    depends_on:
+      - clickhouse
   clickhouse:
     image: clickhouse:24.12
     volumes:
