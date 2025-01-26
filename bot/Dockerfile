@@ -1,7 +1,8 @@
 FROM node:18
 
+COPY entry.sh /app/entry.sh
+
 WORKDIR /app
+RUN ["chmod", "+x", "/app/entry.sh"]
 
-COPY package.json yarn.lock ./
-
-RUN yarn install
+ENTRYPOINT ["/app/entry.sh"]

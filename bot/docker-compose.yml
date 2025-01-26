@@ -12,7 +12,6 @@ services:
       - type: volume
         source: node_modules
         target: /app/node_modules
-    command: yarn run dev
     environment:
       - DISCORD_TOKEN
   clickhouse:
