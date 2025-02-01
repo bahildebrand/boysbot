@@ -18,6 +18,7 @@ export interface MessagePerDayTable {
   day: Date;
   snowflake: String;
   count: Number;
+  guild_id: string;
 }
 
 export type MessagePerDay = Selectable<MessagePerDayTable>;
