@@ -25,14 +25,19 @@ client.on("messageCreate", async (message) => {
   // Ignore messages from bots
   if (message.author.bot) return;
 
-  console.log(`[${message.author.tag}] ${message.content}`);
+  console.log(`[${message.author.tag}] ${message.content} ${message.guildId}`);
   try {
+    if (message.guildId == null) {
+      return;
+    }
+
     await db
       .insertInto("message")
       .values({
         timestamp: message.createdAt,
         snowflake: message.author.id,
         message: message.content,
+        guild_id: message.guildId,
       })
       .execute();
   } catch (e) {

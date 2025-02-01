@@ -8,7 +8,17 @@ export interface MessageTable {
   timestamp: Date;
   snowflake: string;
   message: string;
+  guild_id: string;
 }
 
 export type Message = Selectable<MessageTable>;
 export type NewMessage = Insertable<MessageTable>;
+
+export interface MessagePerDayTable {
+  day: Date;
+  snowflake: String;
+  count: Number;
+}
+
+export type MessagePerDay = Selectable<MessagePerDayTable>;
+export type NewMessagePerDay = Insertable<MessagePerDayTable>;
